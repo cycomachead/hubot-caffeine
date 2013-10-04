@@ -1,0 +1,29 @@
+{
+  "name": "hubot-caffeine",
+  "version": "0.1.0",
+  "author": "ModCloth, Inc. <github+hubot-caffeine@modcloth.com>",
+  "contributors": [
+    {
+      "name": "Dan Buch",
+      "email": "d.buch@modcloth.com"
+    }
+  ],
+  "description": "Hubot coffee me",
+  "license": "MIT",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo rofltesting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modcloth-labs/hubot-caffeine"
+  },
+  "keywords": [
+    "hubot",
+    "plugin",
+    "scripts"
+  ],
+  "engines": {
+    "node": ">= 0.8"
+  }
+}
