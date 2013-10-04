@@ -1,16 +1,22 @@
 # Description:
 #   Caffeinates you
 #
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
 # Commands:
-#   hubot coffee me
-#   hubot caffeinate me
-#   hubot .* tired
-#   hubot .* sleepy
+#   coffee me - supply a user with coffee
+#   hubot caffeinate me - Provides coffee
+#   hubot <whatever> tired <whatever> - Provides coffee to combat sleepiness
+#   hubot <whatever> sleepy <whatever> - Provides coffee to combat sleepiness
 #
 # Notes:
 #   None
 #
-# Authors:
+# Author:
 #   meatballhat
 
 coffeeImages = [
@@ -21,9 +27,10 @@ coffeeImages = [
   "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Brown_cup_of_coffee.jpg/320px-Brown_cup_of_coffee.jpg"
 ]
 
-module.exports = (robot) ->
-  robot.respond /(coffee|caffeinate) me/i, (msg) ->
-    msg.send msg.random(coffeeImages)
+coffeeMe = (msg) ->
+  msg.send msg.random(coffeeImages)
 
-  robot.respond /(tired|sleepy)/i, (msg) ->
-    msg.send msg.random(coffeeImages)
+module.exports = (robot) ->
+  robot.respond /caffeinate me/i, coffeeMe
+  robot.respond /.*(tired|sleepy).*/i, coffeeMe
+  robot.hear /coffee me/i, coffeeMe
